@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>93X FAMILY • Los Santos</title>
+  <title>93X • LOS SANTOS FAMILY</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Impact:wght@400&family=Space+Grotesk:wght@600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Impact:wght@400&family=Space+Grotesk:wght@500;600;700&display=swap');
     
     body {
       font-family: 'Space Grotesk', sans-serif;
@@ -17,135 +17,191 @@
     }
     
     .neon-red {
-      text-shadow: 0 0 10px #ff0022,
-                   0 0 20px #ff0022,
-                   0 0 40px #ff0022;
+      text-shadow: 0 0 15px #ff0022,
+                   0 0 30px #ff0022,
+                   0 0 50px #ff0022;
+    }
+    
+    .neon-gold {
+      text-shadow: 0 0 15px #ffd700,
+                   0 0 30px #ffd700;
+    }
+    
+    .sidebar {
+      background: linear-gradient(180deg, #111111, #1a0000);
     }
     
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1618843479313-40f8e899fcce?q=80&w=2070') center/cover;
+      background: linear-gradient(rgba(20,0,0,0.92), rgba(10,0,0,0.95)), 
+                  url('https://images.unsplash.com/photo-1618843479313-40f8e899fcce?q=80&w=2070') center/cover fixed;
+    }
+    
+    .section-title {
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: #ff0022;
+      box-shadow: 0 0 20px #ff0022;
     }
   </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-black text-white flex min-h-screen">
 
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 border-b border-red-600">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <span class="text-4xl">🚗</span>
-        <h1 class="gta-font text-4xl tracking-tighter neon-red">93X FAMILY</h1>
+  <!-- SIDEBAR -->
+  <div class="sidebar w-72 min-h-screen fixed top-0 left-0 border-r border-red-900 flex flex-col z-50">
+    <div class="p-8">
+      <div class="flex items-center gap-4 mb-12">
+        <span class="text-5xl">🚗</span>
+        <h1 class="gta-font text-5xl tracking-tighter neon-red">93X</h1>
       </div>
-      <div class="flex gap-8 text-lg">
-        <a href="#story" class="hover:text-red-500 transition">STORY</a>
-        <a href="#members" class="hover:text-red-500 transition">CREW</a>
-        <a href="#rides" class="hover:text-red-500 transition">FLOTTE</a>
-        <a href="#rules" class="hover:text-red-500 transition">REGELN</a>
-        <a href="#join" class="hover:text-red-500 transition">JOIN</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center pt-20">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-red-500 text-2xl tracking-[6px] mb-4">LOS SANTOS • 2026</h2>
-      <h1 class="gta-font text-8xl md:text-9xl font-bold leading-none neon-red mb-6">
-        93X<br>FAMILY
-      </h1>
-      <p class="text-4xl text-yellow-400 mb-12">"Wir fahren zusammen.<br>Wir fallen zusammen."</p>
       
-      <div class="flex justify-center gap-6">
-        <a href="#join" class="px-10 py-5 bg-red-600 text-2xl font-bold rounded-xl hover:scale-110 transition flex items-center gap-3">
-          <i class="fas fa-skull"></i> JETZT BEWERBEN
+      <nav class="space-y-2">
+        <a href="#story" class="flex items-center gap-4 px-6 py-4 hover:bg-red-900/50 rounded-xl transition group">
+          <i class="fas fa-scroll text-xl group-hover:text-red-400"></i>
+          <span class="text-xl">STORY</span>
         </a>
-        <a href="https://discord.com" target="_blank" class="px-10 py-5 border-2 border-yellow-400 text-yellow-400 text-2xl font-bold rounded-xl hover:bg-yellow-400 hover:text-black transition">
-          DISCORD
+        <a href="#members" class="flex items-center gap-4 px-6 py-4 hover:bg-red-900/50 rounded-xl transition group">
+          <i class="fas fa-users text-xl group-hover:text-red-400"></i>
+          <span class="text-xl">CREW</span>
         </a>
+        <a href="#rides" class="flex items-center gap-4 px-6 py-4 hover:bg-red-900/50 rounded-xl transition group">
+          <i class="fas fa-car text-xl group-hover:text-red-400"></i>
+          <span class="text-xl">FLOTTE</span>
+        </a>
+        <a href="#rules" class="flex items-center gap-4 px-6 py-4 hover:bg-red-900/50 rounded-xl transition group">
+          <i class="fas fa-gavel text-xl group-hover:text-red-400"></i>
+          <span class="text-xl">REGELN</span>
+        </a>
+        <a href="#join" class="flex items-center gap-4 px-6 py-4 hover:bg-red-900/50 rounded-xl transition group">
+          <i class="fas fa-skull text-xl group-hover:text-red-400"></i>
+          <span class="text-xl">JOIN US</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Online Status -->
+    <div class="mt-auto p-8 border-t border-red-900">
+      <div class="flex items-center gap-3 text-green-400">
+        <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+        <span class="font-medium">8 Members online</span>
+      </div>
+      <div class="text-xs text-white/50 mt-6">
+        93X FAMILY • LOS SANTOS<br>
+        Est. 2026 • Forever Loyal
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- STORY -->
-  <section id="story" class="max-w-7xl mx-auto px-6 py-24">
-    <h2 class="text-6xl gta-font neon-red mb-12 text-center">DIE LEGENDE VON 93X</h2>
-    <div class="max-w-4xl mx-auto text-xl leading-relaxed text-white/90">
-      <p class="mb-8">Wir sind die 93X FAMILY – gegründet von germanfighter93x in den Straßen von Los Santos.</p>
-      <p>Keine Clowns. Kein Drama. Nur Loyalität, schnelle Autos und Respekt. Ob bei großen Heists, illegalen Rennen oder einfach nur Cruise durch die Stadt – wir sind immer zusammen unterwegs.</p>
-      <p class="mt-8 text-yellow-400 text-2xl">Est. 2026 • Forever 93X</p>
-    </div>
-  </section>
+  <!-- MAIN CONTENT -->
+  <div class="flex-1 ml-72">
 
-  <!-- MEMBERS -->
-  <section id="members" class="bg-black/60 py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-6xl gta-font neon-red mb-12 text-center">DIE CREW</h2>
-      <div class="grid md:grid-cols-4 gap-8">
-        <!-- germanfighter93x -->
-        <div class="text-center">
-          <div class="w-32 h-32 mx-auto bg-gradient-to-br from-red-600 to-yellow-400 rounded-2xl flex items-center justify-center text-6xl mb-4 shadow-xl">👑</div>
-          <h3 class="text-2xl font-bold">germanfighter93x</h3>
-          <p class="text-red-500">FOUNDER • BOSS</p>
-        </div>
-        <!-- Platzhalter für weitere Mitglieder -->
-        <div class="text-center opacity-70">
-          <div class="w-32 h-32 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-6xl mb-4">😎</div>
-          <h3 class="text-2xl font-bold">[MITGLIED 2]</h3>
-          <p class="text-white/70">Enforcer</p>
-        </div>
-        <div class="text-center opacity-70">
-          <div class="w-32 h-32 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-6xl mb-4">🔥</div>
-          <h3 class="text-2xl font-bold">[MITGLIED 3]</h3>
-          <p class="text-white/70">Driver</p>
-        </div>
-        <div class="text-center opacity-70">
-          <div class="w-32 h-32 mx-auto bg-zinc-800 rounded-2xl flex items-center justify-center text-6xl mb-4">💰</div>
-          <h3 class="text-2xl font-bold">[MITGLIED 4]</h3>
-          <p class="text-white/70">Hustler</p>
+    <!-- HERO -->
+    <section class="hero-bg h-screen flex items-center">
+      <div class="max-w-4xl px-16">
+        <h2 class="text-red-400 text-3xl tracking-[8px] mb-6">LOS SANTOS • 2026</h2>
+        <h1 class="gta-font text-8xl md:text-9xl leading-none neon-red mb-8">
+          93X<br>FAMILY
+        </h1>
+        <p class="text-5xl neon-gold max-w-lg">"Wir fahren zusammen.<br>Wir fallen zusammen."</p>
+        
+        <div class="mt-16 flex gap-6">
+          <a href="#join" class="px-12 py-6 bg-red-600 text-3xl font-bold rounded-2xl hover:scale-110 transition shadow-2xl shadow-red-600/50 flex items-center gap-4">
+            <i class="fas fa-skull"></i> BEWERBEN
+          </a>
+          <a href="DEIN_DISCORD_LINK_HIER" target="_blank" 
+             class="px-12 py-6 border-4 border-yellow-400 text-yellow-400 text-3xl font-bold rounded-2xl hover:bg-yellow-400 hover:text-black transition">
+            DISCORD
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- RIDES -->
-  <section id="rides" class="max-w-7xl mx-auto px-6 py-24">
-    <h2 class="text-6xl gta-font neon-red mb-12 text-center">UNSERE FLOTTE</h2>
-    <div class="grid md:grid-cols-3 gap-8 text-center">
-      <div>🚗 Karin Kuruma • "The Tank"</div>
-      <div>🏍️ Pegassi Bati • "Speed Demon"</div>
-      <div>🛻 Declasse Granger • "Family Truck"</div>
-    </div>
-  </section>
+    <!-- STORY -->
+    <section id="story" class="max-w-5xl mx-auto px-16 py-28">
+      <h2 class="section-title text-7xl gta-font neon-red mb-12">DIE LEGENDE VON 93X</h2>
+      <div class="text-2xl leading-relaxed text-white/90 max-w-3xl">
+        <p class="mb-8">Gegründet von germanfighter93x in den Straßen von Los Santos.</p>
+        <p>Keine Clowns. Kein Drama. Nur Respekt, schnelle Autos und Loyalität. Wir machen Heists, dominieren die Rennstrecke und halten zusammen – egal was kommt.</p>
+        <p class="mt-12 text-yellow-400 text-3xl">One Family. One City. 93X Forever.</p>
+      </div>
+    </section>
 
-  <!-- REGELN -->
-  <section id="rules" class="bg-black py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-6xl gta-font neon-red mb-12 text-center">CODE OF 93X</h2>
-      <ul class="max-w-2xl mx-auto space-y-6 text-xl">
-        <li class="flex gap-4"><span class="text-red-500">1.</span> Respekt gegenüber jedem Member</li>
-        <li class="flex gap-4"><span class="text-red-500">2.</span> Kein Snitchen – ever</li>
-        <li class="flex gap-4"><span class="text-red-500">3.</span> Gemeinsame Heists gehen vor</li>
-        <li class="flex gap-4"><span class="text-red-500">4.</span> Kein Drama in der Crew</li>
-      </ul>
-    </div>
-  </section>
+    <!-- MEMBERS -->
+    <section id="members" class="bg-zinc-950 py-28">
+      <div class="max-w-5xl mx-auto px-16">
+        <h2 class="section-title text-7xl gta-font neon-red mb-16">DIE CREW</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="mx-auto w-40 h-40 bg-gradient-to-br from-red-600 to-yellow-400 rounded-3xl flex items-center justify-center text-7xl shadow-2xl mb-6">👑</div>
+            <h3 class="text-3xl">germanfighter93x</h3>
+            <p class="text-red-500">FOUNDER • BOSS</p>
+          </div>
+          <!-- Weitere Mitglieder einfach kopieren und anpassen -->
+          <div class="text-center opacity-80">
+            <div class="mx-auto w-40 h-40 bg-zinc-800 rounded-3xl flex items-center justify-center text-7xl mb-6">🔥</div>
+            <h3 class="text-3xl">[Member 2]</h3>
+            <p class="text-white/70">Enforcer</p>
+          </div>
+          <div class="text-center opacity-80">
+            <div class="mx-auto w-40 h-40 bg-zinc-800 rounded-3xl flex items-center justify-center text-7xl mb-6">🏎️</div>
+            <h3 class="text-3xl">[Member 3]</h3>
+            <p class="text-white/70">Driver</p>
+          </div>
+          <div class="text-center opacity-80">
+            <div class="mx-auto w-40 h-40 bg-zinc-800 rounded-3xl flex items-center justify-center text-7xl mb-6">💰</div>
+            <h3 class="text-3xl">[Member 4]</h3>
+            <p class="text-white/70">Hustler</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- JOIN -->
-  <section id="join" class="py-32 text-center bg-gradient-to-b from-transparent via-red-900/20 to-transparent">
-    <h2 class="text-7xl gta-font neon-red mb-8">WILLST DU 93X?</h2>
-    <p class="text-3xl mb-12">Dann bewirb dich jetzt – nur die Harten kommen in die Familie.</p>
-    <a href="DEIN_DISCORD_LINK_HIER" target="_blank" 
-       class="inline-block px-16 py-8 text-4xl bg-red-600 hover:bg-yellow-400 hover:text-black font-bold rounded-3xl transition">
-      ZUR BEWERBUNG →
-    </a>
-  </section>
+    <!-- FLOTTE -->
+    <section id="rides" class="max-w-5xl mx-auto px-16 py-28">
+      <h2 class="section-title text-7xl gta-font neon-red mb-16">UNSERE FLOTTE</h2>
+      <div class="grid md:grid-cols-3 gap-10 text-center">
+        <div class="bg-zinc-900 rounded-3xl p-8 hover:scale-105 transition">🚗 Karin Kuruma – The Tank</div>
+        <div class="bg-zinc-900 rounded-3xl p-8 hover:scale-105 transition">🏍️ Pegassi Bati – Speed Demon</div>
+        <div class="bg-zinc-900 rounded-3xl p-8 hover:scale-105 transition">🛻 Declasse Granger – Family Truck</div>
+      </div>
+    </section>
 
-  <footer class="text-center py-12 text-white/50 border-t border-red-900">
-    93X FAMILY • Los Santos • Est. 2026 • germanfighter93x
-  </footer>
+    <!-- REGELN -->
+    <section id="rules" class="bg-black py-28">
+      <div class="max-w-5xl mx-auto px-16">
+        <h2 class="section-title text-7xl gta-font neon-red mb-16">CODE OF 93X</h2>
+        <div class="grid md:grid-cols-2 gap-8 text-xl">
+          <div class="flex gap-6"><span class="text-red-500 font-bold text-4xl">01</span> Respekt vor jedem Member</div>
+          <div class="flex gap-6"><span class="text-red-500 font-bold text-4xl">02</span> Kein Snitchen – niemals</div>
+          <div class="flex gap-6"><span class="text-red-500 font-bold text-4xl">03</span> Crew geht vor</div>
+          <div class="flex gap-6"><span class="text-red-500 font-bold text-4xl">04</span> Kein Drama in der Familie</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section id="join" class="py-32 text-center bg-gradient-to-b from-transparent to-red-950/30">
+      <h2 class="text-8xl gta-font neon-red mb-8">WILLST DU 93X?</h2>
+      <p class="text-4xl mb-16 max-w-xl mx-auto">Nur die Harten kommen in die Familie.</p>
+      <a href="DEIN_DISCORD_LINK_HIER" target="_blank" 
+         class="inline-flex items-center gap-6 px-20 py-8 text-5xl bg-red-600 hover:bg-yellow-400 hover:text-black font-bold rounded-3xl transition text-center">
+        JETZT BEWERBEN <i class="fas fa-arrow-right"></i>
+      </a>
+    </section>
+
+    <footer class="text-center py-12 text-white/40 text-sm border-t border-red-900">
+      93X FAMILY • LOS SANTOS • EST. 2026 • germanfighter93x
+    </footer>
+  </div>
 
   <script>
-    // Tailwind Script (falls nötig)
+    // Tailwind
     tailwind.config = { content: [] }
   </script>
 </body>
