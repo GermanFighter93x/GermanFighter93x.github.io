@@ -1,195 +1,1068 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEON•VOID | [DEIN NAME]</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap');
-    
-    :root {
-      --neon-pink: #ff00ff;
-      --neon-cyan: #00f0ff;
-      --neon-purple: #9d00ff;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .title-font {
-      font-family: 'Space Grotesk', sans-serif;
-    }
-    
-    .glitch {
-      animation: glitch 1.5s infinite;
-    }
-    
-    @keyframes glitch {
-      0% { text-shadow: 2px 2px var(--neon-pink), -2px -2px var(--neon-cyan); }
-      20% { text-shadow: -2px 2px var(--neon-pink), 2px -2px var(--neon-cyan); }
-      40% { text-shadow: 2px -2px var(--neon-pink), -2px 2px var(--neon-cyan); }
-      60% { text-shadow: -2px -2px var(--neon-pink), 2px 2px var(--neon-cyan); }
-      80% { text-shadow: 2px 2px var(--neon-pink), -2px -2px var(--neon-cyan); }
-      100% { text-shadow: -2px 2px var(--neon-pink), 2px -2px var(--neon-cyan); }
-    }
-    
-    .neon-text {
-      text-shadow: 0 0 10px var(--neon-cyan),
-                   0 0 20px var(--neon-cyan),
-                   0 0 40px var(--neon-pink);
-    }
-    
-    .glass {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(12px);
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FIB – Bewerbung Leadership</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-zinc-950 text-white overflow-x-hidden">
 
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <span class="text-2xl">⚡️</span>
-        <h1 class="title-font text-2xl tracking-tighter neon-text">NEON•VOID</h1>
-      </div>
-      <div class="flex gap-8 text-sm font-medium">
-        <a href="#about" class="hover:text-cyan-400 transition">Über mich</a>
-        <a href="#projects" class="hover:text-cyan-400 transition">Projekte</a>
-        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
-        <a href="#contact" class="hover:text-cyan-400 transition">Kontakt</a>
-      </div>
-    </div>
-  </nav>
+<body>
 
-  <!-- HERO -->
-  <section class="min-h-screen flex items-center pt-20 bg-[radial-gradient(at_center,#1a0033_0%,#000000_70%)]">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+  <header>
+    <button class="logo-btn" onclick="showPage('home')">
+      <img class="logo-emblem" src="./img/fib_logo.png" alt="FIB Logo" />
       <div>
-        <h2 class="text-cyan-400 text-xl tracking-[4px] mb-4">WILLKOMMEN IM MATRIX</h2>
-        <h1 id="name" class="title-font text-7xl md:text-8xl font-bold leading-none glitch neon-text mb-6">
-          [DEIN NAME]
-        </h1>
-        <p id="typing" class="text-3xl text-white/80 mb-10 h-12"></p>
-        
-        <div class="flex gap-4">
-          <a href="https://github.com/deinusername" target="_blank" 
-             class="px-8 py-4 bg-white text-black font-semibold rounded-xl hover:scale-105 transition flex items-center gap-3">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="#contact" 
-             class="px-8 py-4 border border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition">
-            Lass uns connecten
-          </a>
-        </div>
+        <div class="logo-text">Federal Investigation Bureau</div>
       </div>
-      
-      <div class="flex justify-center">
-        <div class="w-80 h-80 rounded-3xl bg-gradient-to-br from-pink-500 via-cyan-400 to-purple-600 p-2 shadow-2xl shadow-pink-500/50">
-          <div class="w-full h-full bg-zinc-950 rounded-3xl flex items-center justify-center text-8xl">
-            ⚡️
+    </button>
+    <nav>
+      <button class="nav-btn" onclick="showPage('rangsystem')">Rangsystem</button>
+      <button class="nav-btn" onclick="showPage('abteilungen')">Abteilungen</button>
+      <button class="nav-btn" onclick="showPage('konzept')">Konzept</button>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <div id="home" class="page active">
+    <div class="hero">
+      <div>
+        <div class="hero-badge">Bewerbung – Leadership Position</div>
+        <h1>BEWERBUNG<br /><span>FIB LEADER</span></h1>
+        <p class="hero-desc">
+          Hiermit bewerbe ich mich offiziell als Leader des Federal Investigation Bureau.
+          Alle relevanten Informationen zu meiner Person, meinem Konzept und der geplanten
+          Strukturierung findest du in den Abschnitten dieser Bewerbung.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-value">#98239</div>
+            <div class="stat-label">Spieler-ID</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="max-w-7xl mx-auto px-6 py-24">
-    <h2 class="text-5xl title-font mb-12 text-center neon-text">WER ZUR HÖLLE BIN ICH?</h2>
-    <div class="max-w-3xl mx-auto text-xl leading-relaxed text-white/80">
-      <p class="mb-6">[Hier deine krass coole Bio. z.B. Ich bin [Name], 23, Full-Stack Dev & AI-Nerd aus Berlin. Baue Sachen, die leuchten und die Leute umhauen.]</p>
-      <p>Im echten Leben: Kaffee, Code, Neon und Zero Days.</p>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="bg-black/40 py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl title-font mb-12 text-center neon-text">PROJEKTE DIE BRENNEN</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Projekt 1 -->
-        <div class="group bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden hover:border-cyan-400 transition-all hover:-translate-y-3">
-          <div class="h-60 bg-gradient-to-br from-pink-500 to-cyan-400 flex items-center justify-center text-6xl">🚀</div>
-          <div class="p-8">
-            <h3 class="text-2xl font-semibold mb-2">Projekt 1 – Name</h3>
-            <p class="text-white/70 mb-6">Kurze Beschreibung. Was es kann, warum es geil ist.</p>
-            <a href="#" class="text-cyan-400 flex items-center gap-2 hover:gap-4 transition">Zum Repo <i class="fas fa-arrow-right"></i></a>
-          </div>
+      <div class="id-card">
+        <div class="id-avatar" style="background:none;border:2px solid var(--border);overflow:hidden;padding:0;"><img
+            src="./img/melo_schmelo.png"
+            style="width:100%;height:100%;object-fit:cover;object-position:top center;" /></div>
+        <div class="id-field">
+          <div class="id-label">Name</div>
+          <div class="id-value">Melo Schmelo</div>
         </div>
-        
-        <!-- Projekt 2 + 3 einfach kopieren und anpassen -->
-        <!-- ... (gleiches Muster) -->
+        <div class="id-field">
+          <div class="id-label">Fraktion</div>
+          <div class="id-value">Federal Investigation Bureau</div>
+        </div>
+        <div class="id-field">
+          <div class="id-label">Bewerbungsposition</div>
+          <div class="id-value">FIB Director / Leader</div>
+        </div>
+        <div class="id-field">
+          <div class="id-label">Datum</div>
+          <div class="id-value" id="card-date"></div>
+        </div>
+        <div class="id-stamp">▪ VERTRAULICH ▪</div>
       </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="max-w-7xl mx-auto px-6 py-24">
-    <h2 class="text-5xl title-font mb-12 text-center neon-text">STACK DER ZUKUNFT</h2>
-    <div class="flex flex-wrap justify-center gap-6 text-5xl">
-      <div class="hover:scale-125 transition">🐍 Python</div>
-      <div class="hover:scale-125 transition">⚛️ React</div>
-      <div class="hover:scale-125 transition">🟦 TypeScript</div>
-      <div class="hover:scale-125 transition">🐙 Docker</div>
-      <div class="hover:scale-125 transition">🧠 AI</div>
-      <!-- füge einfach mehr hinzu -->
+    <div class="info-block">
+      <div class="info-panel">
+        <div class="section-tag" style="margin-bottom:22px;">▸ Persönliche Angaben</div>
+        <div class="info-grid">
+
+          <div class="info-field">
+            <div class="id-label">Vollständiger Name</div>
+            <div class="info-text">Melo Schmelo</div>
+          </div>
+
+          <div class="info-field">
+            <div class="id-label">Spieler-ID / Staatsbürger-Nr.</div>
+            <div class="info-text">#98239</div>
+          </div>
+
+          <div class="info-field full">
+            <div class="id-label">Bisherige Erfahrungen &amp; Leitungspositionen</div>
+            <div class="info-text block">Erfahrung:<br />
+              <br />
+              <strong>Grand:</strong> <br />
+              · DE02 FIB Dep Division Chief<br />
+              · DE01 Chief of HRT FIB<br />
+              · DE01 Dep Division Chief of CID<br />
+              · Rang 19 FIB <br />
+              · DE01 SANG Lieutenant General der SOCOM<br />
+              <br />
+              <strong>Cloud RP:</strong> <br />
+              · Vagos Vize<br />
+              · Russian Mafia Vize<br />
+              · Bloods Leader <br />
+              · FIB <br />
+              · PD<br />
+              <br />
+              <strong>Majestic:</strong> <br />
+              · FIB Vize <br />
+              · State Curator FIB<br />
+              · Sheriff Dep (Admin State Curator) <br />
+              · GOV (Admin State Curator) <br />
+              · SANG Vize <br />
+              · Sheriff Dep Rang 19 <br />
+              · PD Co Leader <br />
+            </div>
+          </div>
+
+          <div class="info-field full">
+            <div class="id-label">Warum möchtest du FIB Leader werden?</div>
+            <div class="info-text block">
+              Ich bewerbe mich als Leader des FIB, weil ich die Fraktion kenne, die Strukturen verstehe und weiß, was es
+              braucht, um sie weiterzubringen. Ich habe in verschiedenen Fraktionen und auf verschiedenen Servern
+              Erfahrung gesammelt – als normales Mitglied, als Co-Leader und als Leader. Ich weiß, wie es sich anfühlt,
+              wenn eine Fraktion gut läuft – und ich weiß, wie es sich anfühlt, wenn sie es nicht tut. Genau deswegen
+              möchte ich diese Verantwortung übernehmen.
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="bg-black py-24 text-center">
-    <h2 class="text-5xl title-font mb-8 neon-text">LASS UNS DIE WELT HACKEN</h2>
-    <a href="mailto:deine@email.de" class="inline-block px-12 py-6 text-3xl border-2 border-cyan-400 rounded-3xl hover:bg-cyan-400 hover:text-black transition">
-      📧 deine@email.de
-    </a>
-    <div class="mt-16 flex justify-center gap-12 text-4xl">
-      <a href="#" class="hover:text-cyan-400"><i class="fab fa-x-twitter"></i></a>
-      <a href="#" class="hover:text-cyan-400"><i class="fab fa-linkedin"></i></a>
-      <a href="#" class="hover:text-cyan-400"><i class="fab fa-github"></i></a>
+  <!-- RANGSYSTEM -->
+  <div id="rangsystem" class="page">
+    <div class="section-page">
+      <div class="section-header">
+        <div class="section-tag">▸ Internes Dokument</div>
+        <div class="section-title">RANGSYSTEM</div>
+        <div class="section-line"></div>
+      </div>
+      <!-- Kategorie-Labels -->
+
+      <div class="rank-grid">
+
+        <!-- LEADER -->
+        <div class="rank-category">▸ Leader-Ränge</div>
+
+        <div class="rank-card highlight tier-leader" style="grid-column:1/-1;">
+          <div class="rank-badge">★</div>
+          <div class="rank-tier">Rang 25 · Leader</div>
+          <div class="rank-name">Director of F.I.B</div>
+          <div class="rank-desc">Leader des F.I.B. Höchste Instanz der Behörde mit voller strategischer
+            Entscheidungsgewalt über alle Abteilungen, Budgets und Operationen.</div>
+          <div class="rank-num">25</div>
+        </div>
+
+        <div class="rank-card tier-leader" style="grid-column:1/-1;">
+          <div class="rank-badge">24</div>
+          <div class="rank-tier">Rang 24 · Co-Leader</div>
+          <div class="rank-name">Deputy Director of F.I.B</div>
+          <div class="rank-desc">Co-Leader des F.I.B. Vertritt den Director in dessen Abwesenheit und unterstützt bei
+            der Gesamtführung der Behörde.</div>
+
+          <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.2);">
+            <div
+              style="font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:12px;">
+              &#9658; Co-Leader</div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <button onclick="openModal('luna')"
+                style="background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.25);padding:10px 18px;cursor:pointer;border-radius:4px;transition:background 0.2s,border-color 0.2s;"
+                onmouseover="this.style.background='rgba(201,168,76,0.15)';this.style.borderColor='rgba(201,168,76,0.6)'"
+                onmouseout="this.style.background='rgba(201,168,76,0.07)';this.style.borderColor='rgba(201,168,76,0.25)'">
+                <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;color:#f0e8d0;">Dr. Luna Walker</div>
+                <div style="font-size:10px;letter-spacing:2px;color:var(--gold);">#12736 · Details ansehen</div>
+              </button>
+
+              <button onclick="openModal('silas')"
+                style="background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.25);padding:10px 18px;cursor:pointer;border-radius:4px;transition:background 0.2s,border-color 0.2s;"
+                onmouseover="this.style.background='rgba(201,168,76,0.15)';this.style.borderColor='rgba(201,168,76,0.6)'"
+                onmouseout="this.style.background='rgba(201,168,76,0.07)';this.style.borderColor='rgba(201,168,76,0.25)'">
+                <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;color:#f0e8d0;">Dr. Silas Sato</div>
+                <div style="font-size:10px;letter-spacing:2px;color:var(--gold);">#10088 · Details ansehen</div>
+              </button>
+
+              <button onclick="openModal('laura')"
+                style="background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.25);padding:10px 18px;cursor:pointer;border-radius:4px;transition:background 0.2s,border-color 0.2s;"
+                onmouseover="this.style.background='rgba(201,168,76,0.15)';this.style.borderColor='rgba(201,168,76,0.6)'"
+                onmouseout="this.style.background='rgba(201,168,76,0.07)';this.style.borderColor='rgba(201,168,76,0.25)'">
+                <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;color:#f0e8d0;">Dr. Laura Hellokitty</div>
+                <div style="font-size:10px;letter-spacing:2px;color:var(--gold);">#85524 · Details ansehen</div>
+              </button>
+            </div>
+          </div>
+          <div class="rank-num">24</div>
+        </div>
+
+        <!-- MODAL OVERLAY -->
+        <div id="person-modal" onclick="closeModal()"
+          style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:999;backdrop-filter:blur(6px);align-items:center;justify-content:center;">
+          <div onclick="event.stopPropagation()"
+            style="background:#0f1318;border:1px solid rgba(201,168,76,0.35);max-width:480px;width:90%;position:relative;border-radius:14px;animation:modalIn 0.3s cubic-bezier(0.22,0.61,0.36,1);">
+            <div
+              style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);">
+            </div>
+            <div style="padding:32px 30px 28px;">
+              <button onclick="closeModal()"
+                style="position:absolute;top:16px;right:20px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;"
+                onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='var(--muted)'">✕</button>
+              <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;">
+                <div id="modal-avatar"
+                  style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#1a1f28,#0f1318);border:2px solid rgba(201,168,76,0.35);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#c9a84c;flex-shrink:0;">
+                </div>
+                <div>
+                  <div id="modal-name"
+                    style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:#f0e8d0;"></div>
+                  <div id="modal-id" style="font-size:11px;letter-spacing:3px;color:#c9a84c;"></div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;margin-bottom:20px;">
+                <div>
+                  <div
+                    style="font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;">
+                    Position</div>
+                  <div
+                    style="font-size:15px;font-weight:600;color:#f0e8d0;border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:4px;">
+                    Deputy Director</div>
+                </div>
+                <div>
+                  <div
+                    style="font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;">
+                    Rang</div>
+                  <div
+                    style="font-size:15px;font-weight:600;color:#f0e8d0;border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:4px;">
+                    24</div>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="font-size:10px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;">
+                  Erfahrung</div>
+                <div id="modal-exp" style="font-size:14px;color:#b0a88e;line-height:1.7;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HIGH COMMAND -->
+        <div class="rank-category">▸ High Command</div>
+
+        <div class="rank-card tier-highcmd">
+          <div class="rank-tier">Rang 23 · High Command</div>
+          <div class="rank-name">Management of F.I.B</div>
+          <div class="rank-desc">Allround-Management – übergreifende Verwaltungs- und Koordinationsaufgaben auf höchster
+            Ebene.</div>
+          <div class="rank-num">23</div>
+        </div>
+
+        <div class="rank-card tier-highcmd">
+          <div class="rank-tier">Rang 22 · High Command</div>
+          <div class="rank-name">Assistant Director</div>
+          <div class="rank-desc">Kurator einer Abteilung. Strategische Aufsicht und Entwicklung der zugewiesenen
+            Abteilung.</div>
+          <div class="rank-num">22</div>
+        </div>
+
+        <div class="rank-card tier-highcmd">
+          <div class="rank-tier">Rang 21 · High Command</div>
+          <div class="rank-name">Commander</div>
+          <div class="rank-desc">Leiter einer Abteilung. Verantwortlich für den operativen Betrieb und die interne
+            Führung der Abteilung.</div>
+          <div class="rank-num">21</div>
+        </div>
+
+        <div class="rank-card tier-highcmd">
+          <div class="rank-tier">Rang 20 · High Command</div>
+          <div class="rank-name">Deputy Commander</div>
+          <div class="rank-desc">Co-Leiter einer Abteilung. Unterstützt den Commander und übernimmt dessen Aufgaben bei
+            Bedarf.</div>
+          <div class="rank-num">20</div>
+        </div>
+
+        <!-- MITGLIEDER -->
+        <div class="rank-category">▸ Mitglieder-Ränge</div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 19 · Mitglieder</div>
+          <div class="rank-name">Senior HR Agent</div>
+          <div class="rank-desc">Erfahrener HR Agent. Übernimmt anspruchsvolle Personalaufgaben und betreut neue
+            Mitglieder.</div>
+          <div class="rank-num">19</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 18 · Mitglieder</div>
+          <div class="rank-name">Instructor</div>
+          <div class="rank-desc">Ausbilder einer Abteilung. Plant und leitet Trainingseinheiten für Agenten.</div>
+          <div class="rank-num">18</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 17 · Mitglieder</div>
+          <div class="rank-name">Agent of HR</div>
+          <div class="rank-desc">HR-Rang. Zuständig für Bewerbungsprozesse und Personalangelegenheiten.</div>
+          <div class="rank-num">17</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 16 · Mitglieder</div>
+          <div class="rank-name">Supervisor Agent</div>
+          <div class="rank-desc">Durch hohes Vertrauen und konstante Leistungen erworben.</div>
+          <div class="rank-num">16</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 15 · Mitglieder</div>
+          <div class="rank-name">Special Agent in Charge</div>
+          <div class="rank-desc">Auszeichnung für bewiesenes Vertrauen und Zuverlässigkeit.</div>
+          <div class="rank-num">15</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 14 · Mitglieder</div>
+          <div class="rank-name">Junior Agent in Charge</div>
+          <div class="rank-desc">Erste Anerkennung für gewonnenes Vertrauen im Dienst.</div>
+          <div class="rank-num">14</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 13 · Mitglieder</div>
+          <div class="rank-name">Elite Agent</div>
+          <div class="rank-desc">Durch außergewöhnliche Leistungen und Vertrauen der Führung erworben.</div>
+          <div class="rank-num">13</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 12 · Mitglieder</div>
+          <div class="rank-name">Senior Field Agent</div>
+          <div class="rank-desc">Durch langjähriges Vertrauen und Verlässlichkeit im Dienst erworben.</div>
+          <div class="rank-num">12</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 11 · Mitglieder</div>
+          <div class="rank-name">Field Agent</div>
+          <div class="rank-desc">Vollwertiges Mitglied der Behörde im aktiven Dienst.</div>
+          <div class="rank-num">11</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 10 · Mitglieder</div>
+          <div class="rank-name">Junior Agent of HR</div>
+          <div class="rank-desc">HR-Einstiegsrang. Unterstützt erfahrene HR-Agenten bei Personalaufgaben.</div>
+          <div class="rank-num">10</div>
+        </div>
+        <!-- SPEZIAL -->
+        <div class="rank-category">▸ Spezial-Ränge</div>
+
+        <div class="rank-card tier-special">
+          <div class="rank-tier">Rang 09 · Media</div>
+          <div class="rank-name">Agent of Media</div>
+          <div class="rank-desc">Media Rang. Zuständig für öffentliche Kommunikation, Social Media und die
+            Außendarstellung des FIB.</div>
+          <div class="rank-num">09</div>
+        </div>
+
+        <!-- AGENT-RÄNGE -->
+        <div class="rank-category">▸ Agent-Ränge</div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 08 · Agent</div>
+          <div class="rank-name">Senior Special Agent</div>
+          <div class="rank-desc">Erfahrener Agent. Hat alle Ausbildungsstufen absolviert und agiert vollständig
+            eigenständig.</div>
+          <div class="rank-num">08</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 07 · Agent</div>
+          <div class="rank-name">Special Agent 2nd Class</div>
+          <div class="rank-desc">Normaler Agent. Gefestigte Kenntnisse und selbstständiger Einsatz im Tagesgeschäft.
+          </div>
+          <div class="rank-num">07</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 06 · Agent</div>
+          <div class="rank-name">Special Agent 1st Class</div>
+          <div class="rank-desc">Normaler Agent. Erste Spezialisierung und eigenverantwortlicher Einsatz in der Behörde.
+          </div>
+          <div class="rank-num">06</div>
+        </div>
+
+        <div class="rank-card tier-member">
+          <div class="rank-tier">Rang 05 · Agent</div>
+          <div class="rank-name">Special Agent</div>
+          <div class="rank-desc">Normaler Agent. Vollständig ausgebildeter Agent mit regulären Einsatzpflichten.</div>
+          <div class="rank-num">05</div>
+        </div>
+
+        <!-- AUSBILDUNG -->
+        <div class="rank-category">▸ Agent in Training</div>
+
+        <div class="rank-card tier-training">
+          <div class="rank-tier">Rang 04 · Training</div>
+          <div class="rank-name">Agent</div>
+          <div class="rank-desc">Agent in Training. Aktive Ausbildungsphase mit praktischen Einsätzen unter Aufsicht.
+          </div>
+          <div class="rank-num">04</div>
+        </div>
+
+        <div class="rank-card tier-training">
+          <div class="rank-tier">Rang 03 · Training</div>
+          <div class="rank-name">Junior Agent</div>
+          <div class="rank-desc">Agent in Training. Grundlegende Feldpraxis und Einführung in die Abteilungsarbeit.
+          </div>
+          <div class="rank-num">03</div>
+        </div>
+
+        <div class="rank-card tier-training">
+          <div class="rank-tier">Rang 02 · Training</div>
+          <div class="rank-name">Agent in Education</div>
+          <div class="rank-desc">Agent in Training. Theoretische und praktische Grundausbildung zu Beginn der
+            FIB-Karriere.</div>
+          <div class="rank-num">02</div>
+        </div>
+
+        <div class="rank-card" style="border-color:rgba(180,50,50,0.3);background:rgba(180,50,50,0.04);">
+          <div class="rank-tier">Rang 01 · Einstellung</div>
+          <div class="rank-name" style="color:#c0504a;">Suspendiert</div>
+          <div class="rank-desc">Einstellungsrang. Vorübergehende Suspendierung – kein aktiver Dienst gestattet.</div>
+          <div class="rank-num">01</div>
+        </div>
+
+      </div>
+
+      <!-- RANG-HIERARCHIE GRAFIK -->
+      <div style="margin-top:60px;">
+        <div class="section-tag" style="margin-bottom:14px;">&#9658; Visuelle Übersicht</div>
+        <div
+          style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,58px);letter-spacing:4px;color:#f0e8d0;line-height:1;margin-bottom:10px;">
+          RANG-HIERARCHIE</div>
+        <div style="width:80px;height:2px;background:linear-gradient(90deg,#c9a84c,transparent);margin-bottom:32px;">
+        </div>
+
+        <div
+          style="background:var(--panel);border:1px solid var(--border);padding:36px 28px;border-radius:12px;position:relative;">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);">
+          </div>
+
+          <svg width="100%" viewBox="0 0 680 980" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+            <defs>
+              <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6"
+                orient="auto-start-reverse">
+                <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </marker>
+            </defs>
+
+            <!-- LEADER -->
+            <text font-family="'Bebas Neue',sans-serif" font-size="11" fill="#c9a84c" x="340" y="20"
+              text-anchor="middle" letter-spacing="4">&#9658; LEADER-R&#196;NGE</text>
+            <rect x="190" y="28" width="300" height="52" rx="6" fill="rgba(201,168,76,0.15)" stroke="#c9a84c"
+              stroke-width="1.5" stroke-opacity="0.8" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="16" fill="#c9a84c" x="340" y="50"
+              text-anchor="middle" letter-spacing="2">Director of F.I.B</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#c9a84c" fill-opacity="0.65" x="340" y="66"
+              text-anchor="middle" letter-spacing="3">RANG 25 &#xB7; LEADER</text>
+            <line x1="340" y1="80" x2="340" y2="94" stroke="#c9a84c" stroke-opacity="0.5" stroke-width="1"
+              marker-end="url(#arr2)" />
+            <rect x="160" y="96" width="360" height="50" rx="6" fill="rgba(201,168,76,0.08)" stroke="#c9a84c"
+              stroke-width="1" stroke-opacity="0.5" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="15" fill="#c9a84c" fill-opacity="0.9" x="340" y="117"
+              text-anchor="middle" letter-spacing="2">Deputy Director of F.I.B</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#c9a84c" fill-opacity="0.6" x="340" y="133"
+              text-anchor="middle" letter-spacing="3">RANG 24 &#xB7; CO-LEADER</text>
+
+            <!-- HIGH COMMAND -->
+            <text font-family="'Bebas Neue',sans-serif" font-size="11" fill="#4a9de0" x="340" y="168"
+              text-anchor="middle" letter-spacing="4">&#9658; HIGH COMMAND</text>
+            <line x1="340" y1="146" x2="340" y2="174" stroke="#4a9de0" stroke-opacity="0.4" stroke-width="1"
+              marker-end="url(#arr2)" />
+            <rect x="100" y="176" width="480" height="42" rx="6" fill="rgba(24,95,165,0.12)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.5" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="14" fill="#4a9de0" x="340" y="193"
+              text-anchor="middle">Management of F.I.B</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#4a9de0" fill-opacity="0.6" x="340" y="207"
+              text-anchor="middle" letter-spacing="2">RANG 23</text>
+            <line x1="340" y1="218" x2="340" y2="230" stroke="#4a9de0" stroke-opacity="0.3" stroke-width="1" />
+            <rect x="60" y="232" width="560" height="42" rx="6" fill="rgba(24,95,165,0.09)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.4" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="14" fill="#4a9de0" x="340" y="249"
+              text-anchor="middle">Assistant Director</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#4a9de0" fill-opacity="0.6" x="340" y="263"
+              text-anchor="middle" letter-spacing="2">RANG 22 &#xB7; KURATOR EINER ABTEILUNG</text>
+            <line x1="340" y1="274" x2="340" y2="286" stroke="#4a9de0" stroke-opacity="0.3" stroke-width="1" />
+            <rect x="60" y="288" width="268" height="42" rx="6" fill="rgba(24,95,165,0.08)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.35" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="14" fill="#4a9de0" x="194" y="305"
+              text-anchor="middle">Commander</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#4a9de0" fill-opacity="0.6" x="194" y="319"
+              text-anchor="middle" letter-spacing="2">RANG 21 &#xB7; LEITER ABTEILUNG</text>
+            <rect x="352" y="288" width="268" height="42" rx="6" fill="rgba(24,95,165,0.07)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.3" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="14" fill="#4a9de0" x="486" y="305"
+              text-anchor="middle">Deputy Commander</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#4a9de0" fill-opacity="0.6" x="486" y="319"
+              text-anchor="middle" letter-spacing="2">RANG 20 &#xB7; CO-LEITER</text>
+
+            <!-- MITGLIEDER -->
+            <text font-family="'Bebas Neue',sans-serif" font-size="11" fill="#3fba90" x="340" y="358"
+              text-anchor="middle" letter-spacing="4">&#9658; MITGLIEDER-R&#196;NGE</text>
+            <line x1="340" y1="330" x2="340" y2="364" stroke="#3fba90" stroke-opacity="0.4" stroke-width="1"
+              marker-end="url(#arr2)" />
+            <rect x="60" y="366" width="268" height="42" rx="6" fill="rgba(15,110,86,0.11)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.4" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="194" y="383"
+              text-anchor="middle">Senior HR Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="194" y="397"
+              text-anchor="middle" letter-spacing="2">RANG 19</text>
+            <rect x="352" y="366" width="268" height="42" rx="6" fill="rgba(15,110,86,0.09)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.35" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="486" y="383"
+              text-anchor="middle">Instructor</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="486" y="397"
+              text-anchor="middle" letter-spacing="2">RANG 18 &#xB7; AUSBILDER</text>
+            <rect x="60" y="422" width="268" height="42" rx="6" fill="rgba(15,110,86,0.08)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.3" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="194" y="439"
+              text-anchor="middle">Agent of HR</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="194" y="453"
+              text-anchor="middle" letter-spacing="2">RANG 17</text>
+            <rect x="352" y="422" width="268" height="42" rx="6" fill="rgba(15,110,86,0.07)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.28" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="486" y="439"
+              text-anchor="middle">Supervisor Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="486" y="453"
+              text-anchor="middle" letter-spacing="2">RANG 16</text>
+            <rect x="60" y="478" width="268" height="42" rx="6" fill="rgba(15,110,86,0.06)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.25" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="194" y="495"
+              text-anchor="middle">Special Agent in Charge</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="194" y="509"
+              text-anchor="middle" letter-spacing="2">RANG 15</text>
+            <rect x="352" y="478" width="268" height="42" rx="6" fill="rgba(15,110,86,0.06)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.22" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="486" y="495"
+              text-anchor="middle">Junior Agent in Charge</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="486" y="509"
+              text-anchor="middle" letter-spacing="2">RANG 14</text>
+            <rect x="60" y="534" width="268" height="42" rx="6" fill="rgba(15,110,86,0.05)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.2" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="194" y="551"
+              text-anchor="middle">Elite Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="194" y="565"
+              text-anchor="middle" letter-spacing="2">RANG 13</text>
+            <rect x="352" y="534" width="268" height="42" rx="6" fill="rgba(15,110,86,0.05)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.18" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="486" y="551"
+              text-anchor="middle">Senior Field Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="486" y="565"
+              text-anchor="middle" letter-spacing="2">RANG 12</text>
+            <rect x="60" y="590" width="268" height="42" rx="6" fill="rgba(15,110,86,0.05)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.16" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="194" y="607"
+              text-anchor="middle">Field Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="194" y="621"
+              text-anchor="middle" letter-spacing="2">RANG 11</text>
+            <rect x="352" y="590" width="268" height="42" rx="6" fill="rgba(15,110,86,0.05)" stroke="#0F6E56"
+              stroke-width="0.8" stroke-opacity="0.16" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#3fba90" x="486" y="607"
+              text-anchor="middle">Junior Agent of HR</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#3fba90" fill-opacity="0.6" x="486" y="621"
+              text-anchor="middle" letter-spacing="2">RANG 10</text>
+
+            <!-- SPEZIAL -->
+            <text font-family="'Bebas Neue',sans-serif" font-size="11" fill="#b07ce0" x="340" y="658"
+              text-anchor="middle" letter-spacing="4">&#9658; SPEZIAL-R&#196;NGE</text>
+            <line x1="340" y1="632" x2="340" y2="664" stroke="#b07ce0" stroke-opacity="0.4" stroke-width="1"
+              marker-end="url(#arr2)" />
+            <rect x="190" y="666" width="300" height="42" rx="6" fill="rgba(83,74,183,0.12)" stroke="#534AB7"
+              stroke-width="0.8" stroke-opacity="0.45" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#b07ce0" x="340" y="683"
+              text-anchor="middle">Agent of Media</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#b07ce0" fill-opacity="0.65" x="340" y="697"
+              text-anchor="middle" letter-spacing="2">RANG 09 &#xB7; &#214;FFENTLICHKEITSARBEIT</text>
+
+            <!-- AGENT-RÄNGE -->
+            <text font-family="'Bebas Neue',sans-serif" font-size="11" fill="#7aafce" x="340" y="734"
+              text-anchor="middle" letter-spacing="4">&#9658; AGENT-R&#196;NGE</text>
+            <line x1="340" y1="708" x2="340" y2="740" stroke="#7aafce" stroke-opacity="0.4" stroke-width="1"
+              marker-end="url(#arr2)" />
+            <rect x="60" y="742" width="268" height="42" rx="6" fill="rgba(24,95,165,0.09)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.3" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#7aafce" x="194" y="759"
+              text-anchor="middle">Senior Special Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#7aafce" fill-opacity="0.65" x="194" y="773"
+              text-anchor="middle" letter-spacing="2">RANG 08</text>
+            <rect x="352" y="742" width="268" height="42" rx="6" fill="rgba(24,95,165,0.07)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.25" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#7aafce" x="486" y="759"
+              text-anchor="middle">Special Agent 2nd Class</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#7aafce" fill-opacity="0.65" x="486" y="773"
+              text-anchor="middle" letter-spacing="2">RANG 07</text>
+            <rect x="60" y="798" width="268" height="42" rx="6" fill="rgba(24,95,165,0.06)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.22" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#7aafce" x="194" y="815"
+              text-anchor="middle">Special Agent 1st Class</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#7aafce" fill-opacity="0.65" x="194" y="829"
+              text-anchor="middle" letter-spacing="2">RANG 06</text>
+            <rect x="352" y="798" width="268" height="42" rx="6" fill="rgba(24,95,165,0.05)" stroke="#185FA5"
+              stroke-width="0.8" stroke-opacity="0.2" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#7aafce" x="486" y="815"
+              text-anchor="middle">Special Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#7aafce" fill-opacity="0.65" x="486" y="829"
+              text-anchor="middle" letter-spacing="2">RANG 05</text>
+
+            <!-- TRAINING -->
+            <text font-family="'Bebas Neue',sans-serif" font-size="11" fill="#e0a050" x="340" y="866"
+              text-anchor="middle" letter-spacing="4">&#9658; AGENT IN TRAINING</text>
+            <line x1="340" y1="840" x2="340" y2="872" stroke="#e0a050" stroke-opacity="0.4" stroke-width="1"
+              marker-end="url(#arr2)" />
+            <rect x="60" y="874" width="173" height="42" rx="6" fill="rgba(133,79,11,0.12)" stroke="#854F0B"
+              stroke-width="0.8" stroke-opacity="0.4" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#e0a050" x="146" y="891"
+              text-anchor="middle">Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#e0a050" fill-opacity="0.65" x="146" y="905"
+              text-anchor="middle" letter-spacing="2">RANG 04</text>
+            <rect x="253" y="874" width="173" height="42" rx="6" fill="rgba(133,79,11,0.10)" stroke="#854F0B"
+              stroke-width="0.8" stroke-opacity="0.35" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#e0a050" x="339" y="891"
+              text-anchor="middle">Junior Agent</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#e0a050" fill-opacity="0.65" x="339" y="905"
+              text-anchor="middle" letter-spacing="2">RANG 03</text>
+            <rect x="446" y="874" width="174" height="42" rx="6" fill="rgba(133,79,11,0.08)" stroke="#854F0B"
+              stroke-width="0.8" stroke-opacity="0.3" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#e0a050" x="533" y="891"
+              text-anchor="middle">Agent in Education</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#e0a050" fill-opacity="0.65" x="533" y="905"
+              text-anchor="middle" letter-spacing="2">RANG 02 &#xB7; GRUNDAUSBILDUNG</text>
+
+            <!-- SUSPENDIERT -->
+            <line x1="340" y1="916" x2="340" y2="928" stroke="#c0504a" stroke-opacity="0.5" stroke-width="1"
+              marker-end="url(#arr2)" />
+            <rect x="190" y="930" width="300" height="36" rx="6" fill="rgba(163,45,45,0.12)" stroke="#A32D2D"
+              stroke-width="0.8" stroke-opacity="0.45" />
+            <text font-family="'Bebas Neue',sans-serif" font-size="13" fill="#c0504a" x="340" y="948"
+              text-anchor="middle">Suspendiert</text>
+            <text font-family="Rajdhani,sans-serif" font-size="10" fill="#c0504a" fill-opacity="0.65" x="340" y="960"
+              text-anchor="middle" letter-spacing="2">RANG 01 &#xB7; KEIN AKTIVER DIENST</text>
+
+            <!-- Seitenbalken -->
+            <rect x="28" y="28" width="3" height="70" rx="1" fill="#c9a84c" fill-opacity="0.6" />
+            <rect x="28" y="176" width="3" height="154" rx="1" fill="#4a9de0" fill-opacity="0.5" />
+            <rect x="28" y="366" width="3" height="266" rx="1" fill="#3fba90" fill-opacity="0.5" />
+            <rect x="28" y="666" width="3" height="42" rx="1" fill="#b07ce0" fill-opacity="0.5" />
+            <rect x="28" y="742" width="3" height="98" rx="1" fill="#7aafce" fill-opacity="0.5" />
+            <rect x="28" y="874" width="3" height="42" rx="1" fill="#e0a050" fill-opacity="0.5" />
+            <rect x="28" y="930" width="3" height="36" rx="1" fill="#c0504a" fill-opacity="0.5" />
+          </svg>
+
+        </div>
+      </div>
+      <!-- ENDE GRAFIK -->
     </div>
-  </section>
+  </div>
 
-  <script>
-    // Tailwind Init
-    tailwind.config = {
-      content: [],
-      theme: { extend: {} }
-    }
+  <!-- ABTEILUNGEN -->
+  <div id="abteilungen" class="page">
+    <div class="section-page">
+      <div class="section-header">
+        <div class="section-tag">▸ Organisationsstruktur</div>
+        <div class="section-title">ABTEILUNGEN</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="dept-list">
 
-    // Typing Effect
-    const texts = ["Full-Stack Dev", "AI Engineer", "Neon-Coder", "Matrix-Breaker"];
-    let count = 0;
-    let index = 0;
-    let currentText = '';
-    let direction = 1;
+        <div class="dept-card">
+          <div class="dept-icon">⭐</div>
+          <div>
+            <div class="dept-name">Direktion</div>
+            <div class="dept-desc">Die Direktion bildet die oberste Führungsebene des FIB und trägt die Gesamtverantwortung für den gesamten Dienstbetrieb.
+              <ul>
+                <li>Koordination aller Abteilungen und strategische Entscheidungsfindung</li>
+                <li>Budgetplanung und Ressourcenverteilung innerhalb des Bureaus</li>
+                <li>Direkter Kontakt zu externen Behörden, Regierungsstellen und Partnerdiensten</li>
+                <li>Zentrale Einsatzkoordination in Krisensituationen</li>
+                <li>Repräsentation des FIB bei offiziellen Anlässen</li>
+                <li>Strategische Ausrichtung und Weiterentwicklung der Behörde</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    const typingElement = document.getElementById('typing');
+        <div class="dept-card">
+          <div class="dept-icon">👥</div>
+          <div>
+            <div class="dept-name">Personalabteilung &amp; Ausbildungsabteilung</div>
+            <div class="dept-desc">Die Human Resources Abteilung vereint Personal- und Ausbildungsaufgaben unter einem Dach und ist erste Anlaufstelle bei Beschwerden oder Feedback.
+              <ul>
+                <li>Bewerbungsverfahren, Vorstellungsgespräche und internes Dienstblatt</li>
+                <li>Ausbildung neuer Agenten für Streifendienst und besondere Einsatzlagen</li>
+                <li>Regelmäßige Leistungsbewertungen und Beförderungsverfahren</li>
+                <li>Fortlaufende Fortbildungsprogramme zu Einsatztaktiken und Vorschriften</li>
+                <li>Psychologische Betreuung und Beratungsangebote für belastete Mitarbeiter</li>
+                <li>Internes Mentoring-System für neue Agenten</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    function type() {
-      currentText = texts[count];
-      typingElement.textContent = currentText.slice(0, index);
-      
-      if (direction === 1) {
-        index++;
-        if (index > currentText.length) {
-          direction = -1;
-          setTimeout(type, 1500);
-          return;
-        }
-      } else {
-        index--;
-        if (index === 0) {
-          direction = 1;
-          count = (count + 1) % texts.length;
-        }
-      }
-      setTimeout(type, 80);
-    }
-    type();
-  </script>
+        <div class="dept-card">
+          <div class="dept-icon">⚖️</div>
+          <div>
+            <div class="dept-name">FIBCO</div>
+            <div class="dept-desc">Die FIBCO ist die interne Kontrollinstanz des FIB. Korruption, Amtsmissbrauch und Fehlverhalten werden konsequent verfolgt und geahndet.
+              <ul>
+                <li>Überwachung des Verhaltens aller Mitarbeiter innerhalb und außerhalb der Behörde</li>
+                <li>Eigenständige interne Ermittlungen in Zusammenarbeit mit der Justiz</li>
+                <li>Einleitung von Disziplinarverfahren – von Verwarnungen bis zur Entlassung</li>
+                <li>Anonyme Vertrauensstelle für Hinweisgeber ohne Angst vor Repressalien</li>
+                <li>Präventionsmaßnahmen und Schulungen zu ethischem Handeln und Rechtskonformität</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="dept-card">
+          <div class="dept-icon">🛡️</div>
+          <div>
+            <div class="dept-name">Hostage Rescue Team</div>
+            <div class="dept-desc">Das Hostage Rescue Team (HRT) ist eine Spezialeinheit des FIB für sehr gefährliche Einsätze wie Geiselnahmen – vergleichbar mit der SWAT.
+              <ul>
+                <li>Intensives Spezialtraining: taktische Zugriffe, Nahkampf und Spezialausrüstung</li>
+                <li>Enge Zusammenarbeit mit geschulten Verhandlungsführern vor jedem Zugriff</li>
+                <li>Planung und Koordination von Hochrisiko-Einsätzen mit umfassenden Lageanalysen</li>
+                <li>Personenschutz bei hochrangigen Persönlichkeiten und Sicherung gefährdeter Objekte</li>
+                <li>Übernahme der Einsatzleitung bei kritischen Sonderlagen</li>
+                <li>Ständige Einsatzbereitschaft rund um die Uhr</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="dept-card">
+          <div class="dept-icon">📢</div>
+          <div>
+            <div class="dept-name">Public Relations</div>
+            <div class="dept-desc">Die Public Relations Abteilung ist die kommunikative Schnittstelle des FIB zur Öffentlichkeit und verantwortet die gesamte Pressearbeit.
+              <ul>
+                <li>Gezielte Steuerung der Informationen, die nach außen getragen werden</li>
+                <li>Organisation von Pressekonferenzen und Verfassen offizieller Stellungnahmen</li>
+                <li>Krisenkommunikation bei unvorhergesehenen Ereignissen gegen Fehlinformationen</li>
+                <li>Pflege des Kontakts zu Medienvertretern und anderen Behörden</li>
+                <li>Interne Kommunikation – Mitarbeiter über Entwicklungen auf dem Laufenden halten</li>
+                <li>Enge Abstimmung mit der Direktion bei sensiblen Themen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="dept-card">
+          <div class="dept-icon">🔎</div>
+          <div>
+            <div class="dept-name">Criminal Investigative Division</div>
+            <div class="dept-desc">Die Criminal Investigative Division ist die verdeckte Ermittlungseinheit des FIB – das Fundament jeder größeren Operation.
+              <ul>
+                <li>Undercover-Operationen in kriminellen Strukturen zur Informationsgewinnung</li>
+                <li>Langzeit-Ermittlungen über Wochen oder Monate zur Aufdeckung krimineller Netzwerke</li>
+                <li>Aufbau und Pflege eines weitreichenden Informantennetzwerks</li>
+                <li>Beweissicherung nach strengsten Standards für die Verwertbarkeit vor Gericht</li>
+                <li>Operative Planung von Razzien und Zugriffen in Zusammenarbeit mit dem HRT</li>
+                <li>Tägliche Risikoanalysen und Lagebeurteilungen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="dept-card">
+          <div class="dept-icon">🎓</div>
+          <div>
+            <div class="dept-name">FIB Academy</div>
+            <div class="dept-desc">Die FIB Academy ist der Einstiegspunkt für alle neuen Mitglieder – erst nach erfolgreichem Abschluss erfolgt die Zuteilung zu einer Fachabteilung.
+              <ul>
+                <li>Theoretische Module zu Rechtsgrundlagen, Einsatztaktiken und Verhaltensrichtlinien</li>
+                <li>Praktische Übungen im Gelände und regelmäßige Schießübungen</li>
+                <li>Physische Eignungstests zum Nachweis der Einsatzfähigkeit</li>
+                <li>Bewertung durch erfahrene Ausbilder zur Einschätzung der Fachabteilungs-Eignung</li>
+                <li>Rechtliche Schulungen für den korrekten Umgang mit Verdächtigen und Beweismitteln</li>
+                <li>Feierliche Aufnahme in den Dienst nach bestandener Abschlussprüfung</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- KONZEPT -->
+  <div id="konzept" class="page">
+    <div class="section-page">
+      <div class="section-header">
+        <div class="section-tag">▸ Führungsvision</div>
+        <div class="section-title">KONZEPT</div>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="konzept-block">
+        <h3>Ziele als FIB Leader</h3>
+        <p>Mein Ziel ist es, das FIB zu einem richtigen Team zu machen, wo jeder weiß, was er zu tun hat. Ich will, dass
+          die Fraktion aktiv ist und dass man merkt, dass hier jemand die Leitung hat, der sich kümmert. Außerdem will
+          ich, dass die Abteilungen alle richtig funktionieren und nicht nur auf dem Papier existieren.</p>
+      </div>
+
+      <div class="konzept-block">
+        <h3>Aktivität &amp; Verfügbarkeit</h3>
+        <p>Ich bin jeden Tag zwischen 4 und 6 Stunden online. Das heißt, ich bin eigentlich immer da, wenn was ist, und
+          kann schnell reagieren. Ich finde es wichtig, dass ein Leader präsent ist, weil man sonst als Mitglied das
+          Gefühl hat, dass sich niemand um einen kümmert.</p>
+      </div>
+
+      <div class="konzept-block">
+        <h3>Umgang mit Mitgliedern</h3>
+        <p>Wenn jemand Mist baut oder einfach nicht mehr auftaucht dann rede ich erstmal mit der Person. Ich will
+          wissen, ob es einen Grund gibt, und gebe dem Spieler eine Chance, das zu erklären. Wenn das Gespräch nichts
+          bringt und die Person einfach weitermacht wie vorher, dann gibt es eine Sanktion. Und wenn auch das nichts
+          hilft, wird die Person entlassen. Ich finde, man sollte niemanden direkt rauswerfen, ohne vorher geredet zu
+          haben – aber irgendwann muss man auch konsequent sein.</p>
+      </div>
+
+      <div class="konzept-block">
+        <h3>Geplante Verbesserungen &amp; Innovationen</h3>
+        <p>Ich würde gerne mehr interne Sachen einführen, damit es nicht langweilig wird. Zum Beispiel regelmäßige
+          Trainings oder kleine Events innerhalb der Fraktion. Eine Idee, die ich auf jeden Fall umsetzen möchte, ist
+          ein wöchentliches Event, bei dem derjenige, der die meisten Verhaftungen in einer Woche hat, einen doppelten
+          Uprank bekommt. Ich finde, sowas motiviert die Mitglieder wirklich, aktiv zu bleiben, und gibt einem auch
+          einen Grund, mehr Dienst zu machen. Außerdem ist mir das Thema Achievements sehr wichtig. Mein Plan ist es,
+          diese aktiv anzugehen und dafür zu sorgen, dass wir als FIB die gestellten Aufgaben wirklich ernst nehmen und
+          umsetzen. Ich finde, das zeigt nach außen, dass wir eine aktive und engagierte Fraktion sind.</p>
+      </div>
+
+      <div class="konzept-block">
+        <h3>Abschlusswort &amp; Motivation</h3>
+        <p>Ich weiß, dass ich die Erfahrung habe, die man für diese Position braucht. Ich habe auf mehreren Servern in
+          Führungspositionen gearbeitet und weiß, wie man mit Menschen umgeht. Ich bin täglich aktiv und würde alles
+          dafür geben, dass das FIB eine der besten Fraktionen auf dem Server wird. Ich hoffe, dass ihr mir die Chance
+          gebt, das zu beweisen.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- KONTAKT -->
+  <div
+    style="background:linear-gradient(160deg,#0a0c0f 0%,#0d1015 100%);border-top:1px solid rgba(201,168,76,0.15);padding:70px 40px 80px;">
+    <div style="max-width:960px;margin:0 auto;">
+
+      <div style="margin-bottom:44px;">
+        <div style="font-size:11px;letter-spacing:4px;color:#c9a84c;text-transform:uppercase;margin-bottom:10px;">▸
+          Direkte Erreichbarkeit</div>
+        <div
+          style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,52px);letter-spacing:4px;color:#f0e8d0;line-height:1;">
+          KONTAKT</div>
+        <div style="width:70px;height:2px;background:linear-gradient(90deg,#c9a84c,transparent);margin-top:12px;"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;">
+
+        <!-- Discord -->
+        <div
+          style="background:#0f1318;border:1px solid rgba(201,168,76,0.25);padding:28px 26px;position:relative;border-radius:12px;transition:border-color 0.3s,transform 0.3s;"
+          onmouseover="this.style.borderColor='rgba(201,168,76,0.7)';this.style.transform='translateY(-4px)'"
+          onmouseout="this.style.borderColor='rgba(201,168,76,0.25)';this.style.transform='translateY(0)'">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);">
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div
+              style="width:48px;height:48px;background:linear-gradient(135deg,rgba(88,101,242,0.3),rgba(88,101,242,0.08));border:1px solid rgba(88,101,242,0.4);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"
+                  fill="#5865F2" />
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:3px;">
+                Discord</div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#f0e8d0;">
+                Aleyna06_</div>
+            </div>
+          </div>
+          <div style="font-size:13px;color:#6b6552;line-height:1.5;">Primärer Kontaktweg – für Fragen, Feedback oder
+            direkte Kommunikation.</div>
+          <div
+            onclick="navigator.clipboard.writeText('Aleyna06_').then(()=>{this.textContent='✓ Kopiert!';setTimeout(()=>{this.textContent='Discord kopieren'},2000)})"
+            style="margin-top:14px;background:rgba(88,101,242,0.1);border:1px solid rgba(88,101,242,0.3);color:#8b9cf4;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;cursor:pointer;display:inline-block;border-radius:4px;transition:background 0.2s;"
+            onmouseover="this.style.background='rgba(88,101,242,0.2)'"
+            onmouseout="this.style.background='rgba(88,101,242,0.1)'">Discord kopieren</div>
+        </div>
+
+        <!-- Spieler-ID -->
+        <div
+          style="background:#0f1318;border:1px solid rgba(201,168,76,0.25);padding:28px 26px;position:relative;border-radius:12px;transition:border-color 0.3s,transform 0.3s;"
+          onmouseover="this.style.borderColor='rgba(201,168,76,0.7)';this.style.transform='translateY(-4px)'"
+          onmouseout="this.style.borderColor='rgba(201,168,76,0.25)';this.style.transform='translateY(0)'">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);">
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div
+              style="width:48px;height:48px;background:linear-gradient(135deg,rgba(201,168,76,0.2),rgba(201,168,76,0.05));border:1px solid rgba(201,168,76,0.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"
+                  fill="#c9a84c" />
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:3px;">
+                Spieler-ID</div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#c9a84c;">#98239
+              </div>
+            </div>
+          </div>
+          <div style="font-size:13px;color:#6b6552;line-height:1.5;">Offizielle Identifikationsnummer im Spiel zur
+            eindeutigen Zuordnung.</div>
+          <div
+            onclick="navigator.clipboard.writeText('98239').then(()=>{this.textContent='✓ Kopiert!';setTimeout(()=>{this.textContent='ID kopieren'},2000)})"
+            style="margin-top:14px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);color:#c9a84c;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;cursor:pointer;display:inline-block;border-radius:4px;transition:background 0.2s;"
+            onmouseover="this.style.background='rgba(201,168,76,0.16)'"
+            onmouseout="this.style.background='rgba(201,168,76,0.08)'">ID kopieren</div>
+        </div>
+
+        <!-- Name -->
+        <div
+          style="background:#0f1318;border:1px solid rgba(201,168,76,0.25);padding:28px 26px;position:relative;border-radius:12px;transition:border-color 0.3s,transform 0.3s;"
+          onmouseover="this.style.borderColor='rgba(201,168,76,0.7)';this.style.transform='translateY(-4px)'"
+          onmouseout="this.style.borderColor='rgba(201,168,76,0.25)';this.style.transform='translateY(0)'">
+          <div
+            style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);">
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+            <div
+              style="width:48px;height:48px;background:linear-gradient(135deg,rgba(201,168,76,0.2),rgba(201,168,76,0.05));border:1px solid rgba(201,168,76,0.35);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#c9a84c;">
+              MS</div>
+          </div>
+          <div>
+            <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:3px;">
+              Vollständiger Name</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#f0e8d0;">Melo
+              Schmelo</div>
+          </div>
+        </div>
+        <div style="font-size:13px;color:#6b6552;line-height:1.5;">Bewerbung für die Position des FIB Directors · Rang
+          25.</div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+
+  <!-- IMPRESSUM & DATENSCHUTZ MODAL -->
+  <div id="legal-modal" onclick="closeLegal()"
+    style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;backdrop-filter:blur(8px);align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px;">
+    <div onclick="event.stopPropagation()"
+      style="background:#0f1318;border:1px solid rgba(201,168,76,0.35);max-width:680px;width:100%;position:relative;border-radius:14px;animation:modalIn 0.3s cubic-bezier(0.22,0.61,0.36,1);margin:auto;">
+      <div
+        style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);">
+      </div>
+
+      <div style="padding:36px 34px 32px;">
+        <button onclick="closeLegal()"
+          style="position:absolute;top:16px;right:20px;background:none;border:none;color:#6b6552;font-size:20px;cursor:pointer;line-height:1;"
+          onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#6b6552'">✕</button>
+
+        <!-- Tabs -->
+        <div style="display:flex;gap:8px;margin-bottom:28px;">
+          <button id="tab-impressum" onclick="switchTab('impressum')"
+            style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.5);color:#c9a84c;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 18px;cursor:pointer;border-radius:4px;">Impressum</button>
+          <button id="tab-datenschutz" onclick="switchTab('datenschutz')"
+            style="background:transparent;border:1px solid rgba(201,168,76,0.2);color:#6b6552;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:8px 18px;cursor:pointer;border-radius:4px;">Datenschutz</button>
+        </div>
+
+        <!-- Impressum Inhalt -->
+        <div id="content-impressum">
+          <div
+            style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:#f0e8d0;margin-bottom:20px;">
+            IMPRESSUM</div>
+
+          <div style="margin-bottom:20px;">
+            <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:6px;">
+              Verantwortlich für den Inhalt</div>
+            <div style="font-size:15px;color:#d4c9a8;line-height:1.7;">Melo Schmelo<br />Spieler-ID:
+              #98239<br />Discord: Aleyna06_</div>
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:6px;">
+              Urheberrecht</div>
+            <div style="font-size:14px;color:#8a8070;line-height:1.7;">Sämtliche Inhalte dieser Website – darunter
+              Texte, Konzepte, Strukturen, Designelemente und das Gesamtkonzept der Bewerbung – sind geistiges Eigentum
+              von Melo Schmelo und urheberrechtlich geschützt. Eine Vervielfältigung, Weitergabe oder Nutzung der
+              Inhalte – auch in Teilen – ohne ausdrückliche schriftliche Genehmigung ist untersagt.</div>
+          </div>
+
+          <div>
+            <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:6px;">
+              Haftungsausschluss</div>
+            <div style="font-size:14px;color:#8a8070;line-height:1.7;">Alle Angaben auf dieser Seite wurden nach bestem
+              Wissen und Gewissen erstellt. Für die Richtigkeit, Vollständigkeit oder Aktualität der Inhalte wird keine
+              Gewähr übernommen.</div>
+          </div>
+        </div>
+
+        <!-- Datenschutz Inhalt -->
+        <div id="content-datenschutz" style="display:none;">
+          <div
+            style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:#f0e8d0;margin-bottom:20px;">
+            DATENSCHUTZ</div>
+
+          <div style="margin-bottom:20px;">
+            <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:6px;">
+              Grundsatz</div>
+            <div style="font-size:14px;color:#8a8070;line-height:1.7;">Diese Website erhebt, speichert oder verarbeitet
+              keine personenbezogenen Daten der Besucher. Es werden keine Cookies gesetzt, kein Tracking durchgeführt
+              und keine Analysedienste verwendet.</div>
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:6px;">
+              Schutz der Inhalte</div>
+            <div style="font-size:14px;color:#8a8070;line-height:1.7;">Sämtliche Texte, Konzepte, Strukturen und Ideen
+              auf dieser Website sind urheberrechtlich geschützt und dürfen nicht ohne Genehmigung kopiert, verändert
+              oder für eigene Bewerbungen verwendet werden. Dies gilt insbesondere für das Konzept, das Rangsystem und
+              die Abteilungsstruktur.</div>
+          </div>
+
+          <div>
+            <div style="font-size:10px;letter-spacing:3px;color:#6b6552;text-transform:uppercase;margin-bottom:6px;">
+              Externe Links</div>
+            <div style="font-size:14px;color:#8a8070;line-height:1.7;">Diese Website enthält keine externen Links zu
+              Drittanbietern. Für Inhalte externer Seiten, die ggf. über den Hosting-Dienst erreichbar sind, übernehmen
+              wir keine Haftung.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    &copy; Federal Investigation Bureau &nbsp;▪&nbsp; Vertrauliches Dokument &nbsp;▪&nbsp; Alle Rechte vorbehalten
+    <div style="margin-top:12px;display:flex;justify-content:center;gap:20px;">
+      <button onclick="openLegal('impressum')"
+        style="background:none;border:none;color:#6b6552;font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:color 0.2s;"
+        onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#6b6552'">Impressum</button>
+      <span style="color:#3a3830;">▪</span>
+      <button onclick="openLegal('datenschutz')"
+        style="background:none;border:none;color:#6b6552;font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:color 0.2s;"
+        onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#6b6552'">Datenschutz</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
